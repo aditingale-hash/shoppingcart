@@ -3,7 +3,7 @@ body {
 	font-family: 'Varela Round', sans-serif;
 }
 .form-control {
-	box-shadow: none;		
+	box-shadow: none;
 	font-weight: normal;
 	font-size: 13px;
 }
@@ -28,7 +28,7 @@ body {
 	padding-right: 50px;
 }
 .navbar .navbar-brand b {
-	color: #33cabb;		
+	color: #33cabb;
 }
 .navbar .form-inline {
 	display: inline-block;
@@ -39,7 +39,7 @@ body {
 }
 .search-box {
 	position: relative;
-}	
+}
 .search-box input {
 	padding-right: 35px;
 	border-color: #dfe3e8;
@@ -87,7 +87,7 @@ body {
 	right: 0;
 	font-size: 14px;
 }
-.navbar .action-form a {		
+.navbar .action-form a {
 	color: #33cabb;
 	padding: 0 !important;
 	font-size: 14px;
@@ -101,8 +101,8 @@ body {
 	color: #fff;
 	background: #33cabb !important;
 	border: none;
-}	
-.navbar .btn-primary:hover, .navbar .btn-primary:focus {		
+}
+.navbar .btn-primary:hover, .navbar .btn-primary:focus {
 	color: #fff;
 	background: #31bfb1 !important;
 }

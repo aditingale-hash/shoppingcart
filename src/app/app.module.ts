@@ -23,7 +23,7 @@ import { WalletHomeComponent } from './component/wallet/wallet-home/wallet-home.
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
