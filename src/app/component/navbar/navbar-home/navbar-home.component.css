@@ -72,7 +72,7 @@ body {
 	box-shadow: 0 2px 8px rgba(0,0,0,.05);
 }
 .navbar a, .navbar a:active {
-	color: #888;
+	color: rgb(0, 0, 0);
 	padding: 8px 20px;
 	background: transparent;
 	line-height: normal;
