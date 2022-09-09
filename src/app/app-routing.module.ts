@@ -6,7 +6,7 @@ import { ProductHomeComponent } from './component/product/product-home/product-h
 import { ProfileHomeComponent } from './component/profile/profile-home/profile-home.component';
 
 const routes: Routes = [
-  {path:'', component: ProductHomeComponent},
+  {path:'/product', component: ProductHomeComponent},
   {path:'cart', component: CartHomeComponent},
   {path:'order', component: OrderHomeComponent},
   {path:'profile', component: ProfileHomeComponent},
