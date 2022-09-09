@@ -10,7 +10,12 @@ import { OrderHomeComponent } from './component/order/order-home/order-home.comp
 import { ProductHomeComponent } from './component/product/product-home/product-home.component';
 import { WalletHomeComponent } from './component/wallet/wallet-home/wallet-home.component';
 import { FooterHomeComponent } from './component/footer-home/footer-home.component';
-
+import { LoginComponent } from './component/profile/login/login.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { HttpClientModule} from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AdminComponent } from './component/profile/admin/admin.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,11 +26,17 @@ import { FooterHomeComponent } from './component/footer-home/footer-home.compone
     ProductHomeComponent,
     WalletHomeComponent,
     FooterHomeComponent,
+    LoginComponent,
+    AdminComponent,
 
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
