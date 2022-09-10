@@ -8,6 +8,7 @@ import { BehaviorSubject } from "rxjs";
 export class AppService{
 
   loggedIn = new BehaviorSubject<boolean>(false);
+  userId = new BehaviorSubject<number>(0);
 
   //[] is initial value of cart_product.
 
