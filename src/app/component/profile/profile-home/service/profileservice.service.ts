@@ -18,4 +18,6 @@ export class ProfileserviceService implements CanActivate{
     this.router.navigateByUrl("/login");
     return false;
   }
+
+
 }
