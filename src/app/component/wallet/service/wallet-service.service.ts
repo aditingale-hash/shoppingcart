@@ -18,5 +18,9 @@ export class WalletServiceService {
     return this.http.put<number>(this.activateAPI+userId, {});
   }
 
+  public a(){
+    return this.http.get("http://localhost:1005/wallet/a");
+  }
+
 
 }
