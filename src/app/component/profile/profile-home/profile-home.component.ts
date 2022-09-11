@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,NgZone } from '@angular/core';
 import { FormControl, FormGroup, FormGroupDirective } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AppService } from 'src/app/Appservice';
@@ -12,13 +12,27 @@ import { AuthguardService } from './service/Authguard.service';
 })
 export class ProfileHomeComponent implements OnInit {
 
+
+
   loginForm: FormGroup;
   users:any;
   errorMsg: string;
   user:user[];
   username:string;
   password1: any;
-  constructor(private router: Router, private appService: AppService,private authservice:AuthguardService) { }
+  guser;
+
+
+  constructor(private router: Router,
+     private appService: AppService,
+     private authservice:AuthguardService,ngZone:NgZone) {
+      window['onSignIn'] = user =>ngZone.run(
+        () => {
+          this.afterSignUp(user);
+
+        }
+      );
+     }
 
   ngOnInit(): void {
 
@@ -31,6 +45,10 @@ export class ProfileHomeComponent implements OnInit {
       username: new FormControl(''),
       password: new FormControl('')
     });
+  }
+  afterSignUp(googleUser){
+    this.guser=googleUser;
+    console.log(googleUser);
   }
 
   onFormSubmit(){
@@ -58,4 +76,7 @@ console.log(user1);
         this.errorMsg = 'Invalid Credentials';
      }
   }
+
+
 }
+

@@ -9,13 +9,17 @@ import { CartHomeComponent } from './component/cart/cart-home/cart-home.componen
 import { OrderHomeComponent } from './component/order/order-home/order-home.component';
 import { ProductHomeComponent } from './component/product/product-home/product-home.component';
 import { WalletHomeComponent } from './component/wallet/wallet-home/wallet-home.component';
-import { FooterHomeComponent } from './component/footer-home/footer-home.component';
 import { LoginComponent } from './component/profile/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdminComponent } from './component/profile/admin/admin.component';
+
+import { FooterHomeComponent } from './component/footer/footer-home/footer-home.component';
+
+import { CategoryHomeComponent } from './component/product/category/category-home/category-home.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,9 +29,11 @@ import { AdminComponent } from './component/profile/admin/admin.component';
     OrderHomeComponent,
     ProductHomeComponent,
     WalletHomeComponent,
-    FooterHomeComponent,
     LoginComponent,
     AdminComponent,
+
+    FooterHomeComponent
+
 
   ],
   imports: [
