@@ -5,6 +5,7 @@ export interface Product{
     category?: string;
     review?: string;
     rating?: number;
+    price?:number;
     specification?: string;
     description?: string;
   }
