@@ -14,7 +14,7 @@ export class WalletHomeComponent implements OnInit {
   balance:number;
   walletList:Wallet[];
 
-  constructor(private wService: WalletServiceService, private appService: AppService) { 
+  constructor(private wService: WalletServiceService, private appService: AppService) {
     this.showBal=false;
     this.balance=0;
     this.walletList=[];
@@ -23,7 +23,7 @@ export class WalletHomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  
+
 
   activateWalletByUserid(){
     console.log("Activate");
@@ -80,7 +80,7 @@ export class WalletHomeComponent implements OnInit {
 
 
 
- temp=	{
+ /*temp=	{
   url:'/wallet/pay',
   data:JSON.stringify({  amount:  amount, info: 'order_request'}),
   contentType: 'application/json',
@@ -101,21 +101,21 @@ export class WalletHomeComponent implements OnInit {
         handler:function (a) {
         console. log (a.razorpay_payement_id)
         console. log ( a.razorpay_order_id)
-        console. log (razorpay_signature)
+        //console. log (razorpay_signature)
         console.log ( ' payment successful !!')
         alert("congrates !! Payment successful !!")
         },
 
-        prefill: { name: "", email: "", contact: "" }, 
+        prefill: { name: "", email: "", contact: "" },
         notes: { address: "Razorpay Corporate Office"}
         ,
         theme: { color: "#3399cc"}
 
       };
 
-      let rzp = new Razorpay(options) ;
-      
-      rzp.on ( "payment.failed", function (response) {
+     // let rzp = new Razorpay(options) ;
+
+      //rzp.on ( "payment.failed", function (response) {
       console. log(response.error. code) ;
       console. log (response.error.description)
       console. log (response. error. source) ;
@@ -142,7 +142,7 @@ export class WalletHomeComponent implements OnInit {
 
 
 
-
+*/
 
 
 
