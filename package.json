@@ -14,11 +14,18 @@
     "@angular/common": "^14.1.0",
     "@angular/compiler": "^14.1.0",
     "@angular/core": "^14.1.0",
+    "@angular/fire": "^7.4.1",
     "@angular/forms": "^14.1.0",
     "@angular/platform-browser": "^14.1.0",
     "@angular/platform-browser-dynamic": "^14.1.0",
     "@angular/router": "^14.1.0",
+<<<<<<< HEAD
     "bootstrap": "^5.2.1",
+=======
+    "@types/gapi": "^0.0.42",
+    "@types/gapi.auth2": "^0.0.56",
+    "bootstrap": "4.6",
+>>>>>>> e1929ad4f2082b1fce30d05bdcf8ee473f9b4785
     "btoa": "^1.2.1",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
