@@ -1,11 +1,11 @@
 <section>
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-    
+
 
     <div class="row" style="margin-top: 50px;">
 
-        <div class="col-3"></div>
-        <div class="col-6">
+        <div class="col-2"></div>
+        <div class="col-8">
 
 
             <div class="btn-group" role="group" aria-label="Basic outlined example">
@@ -19,21 +19,23 @@
                     class="btn btn-outline-secondary">Statement</button>&nbsp;&nbsp;&nbsp;
                 <button (click)="statements()" type="button" class="btn btn-outline-secondary">Show All
                     Statements</button>&nbsp;&nbsp;&nbsp;
-                <button (click)="updateByUserid()" type="button" class="btn btn-outline-secondary">Update</button>
+                <button (click)="updateByUserid()" type="button"
+                    class="btn btn-outline-secondary">Update</button>&nbsp;&nbsp;&nbsp;
                 <button (click)="deactivateWalletByUserid()" type="button"
                     class="btn btn-outline-secondary">Deactivate</button>&nbsp;&nbsp;&nbsp;
+                <button (click)="createRzpayOrder()" type="button" class="btn btn-outline-secondary">pay</button>
             </div>
 
 
 
         </div>
-        <div class="col-3"></div>
+        <div class="col-2"></div>
 
     </div>
 
 
     <div class="row" style="margin-top: 20px;" *ngIf="showBal">
-        
+
         <div class="col-4"></div>
         <div class="alert alert-success col-4" role="alert" style="text-align: center;">
             INR<a href="#" class="alert-link"> {{balance}}</a>!
