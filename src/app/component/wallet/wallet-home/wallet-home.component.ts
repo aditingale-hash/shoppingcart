@@ -10,9 +10,11 @@ import { WalletServiceService } from '../service/wallet-service.service';
 export class WalletHomeComponent implements OnInit {
 
   showBal: boolean;
+  balance:number;
 
   constructor(private wService: WalletServiceService, private appService: AppService) { 
     this.showBal=false;
+    this.balance=0;
   }
 
   ngOnInit(): void {
@@ -29,8 +31,9 @@ export class WalletHomeComponent implements OnInit {
 
   checkBalanceByUserid(){
     this.showBal=!this.showBal;
-    this.wService.a().subscribe(data=>{
+    this.wService.getBalance(1).subscribe(data=>{
       console.log(data);
+      this.balance=data;
     });
     console.log("Check B");
   }

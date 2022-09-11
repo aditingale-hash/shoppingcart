@@ -18,8 +18,8 @@ export class WalletServiceService {
     return this.http.put<number>(this.activateAPI+userId, {});
   }
 
-  public a(){
-    return this.http.get("http://localhost:1005/wallet/a");
+  public getBalance(uid:number):Observable<number>{
+    return this.http.get<number>("http://localhost:1005/wallet/getBalance/"+uid);
   }
 
 
