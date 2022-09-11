@@ -8,10 +8,10 @@ body {
 	font-size: 13px;
 }
 .navbar {
-	background: #fff;
+	background: rgb(0, 0, 0);
 	padding-left: 16px;
 	padding-right: 16px;
-	border-bottom: 1px solid #dfe3e8;
+	border-bottom: 1px solid #ffffff;
 	border-radius: 0;
 }
 .nav-link img {
@@ -56,26 +56,14 @@ body {
 	padding: 7px;
 	height: 100%;
 }
-.search-box i {
-	color: #a0a5b1;
-	font-size: 19px;
-}
-.navbar .sign-up-btn {
-	min-width: 110px;
-	max-height: 36px;
-}
-.navbar .dropdown-menu {
-	color: #999;
-	font-weight: normal;
-	border-radius: 1px;
-	border-color: #e5e5e5;
-	box-shadow: 0 2px 8px rgba(0,0,0,.05);
-}
+
+
 .navbar a, .navbar a:active {
-	color: rgb(0, 0, 0);
+	color: rgb(255, 255, 255);
 	padding: 8px 20px;
 	background: transparent;
 	line-height: normal;
+
 }
 .navbar .navbar-form {
 	border: none;
@@ -98,44 +86,15 @@ body {
     font-size: 13px;
 }
 .navbar .btn-primary, .navbar .btn-primary:active {
-	color: #fff;
-	background: #33cabb !important;
+	color: rgb(255, 255, 255);
+	background: #000000 !important;
 	border: none;
 }
 .navbar .btn-primary:hover, .navbar .btn-primary:focus {
-	color: #fff;
+	color: rgb(255, 255, 255);
 	background: #31bfb1 !important;
 }
-.navbar .social-btn .btn, .navbar .social-btn .btn:hover {
-	color: #fff;
-	margin: 0;
-	padding: 0 !important;
-	font-size: 13px;
-	border: none;
-	transition: all 0.4s;
-	text-align: center;
-	line-height: 34px;
-	width: 47%;
-	text-decoration: none;
-}
-.navbar .social-btn .facebook-btn {
-	background: #507cc0;
-}
-.navbar .social-btn .facebook-btn:hover {
-	background: #4676bd;
-}
-.navbar .social-btn .twitter-btn {
-	background: #64ccf1;
-}
-.navbar .social-btn .twitter-btn:hover {
-	background: #4ec7ef;
-}
-.navbar .social-btn .btn i {
-	margin-right: 5px;
-	font-size: 16px;
-	position: relative;
-	top: 2px;
-}
+
 .or-seperator {
 	margin-top: 32px;
 	text-align: center;
@@ -164,6 +123,8 @@ body {
 	position: relative;
 	top: 1px;
 }
+
+
 @media (min-width: 1200px){
 	.form-inline .input-group {
 		width: 300px;
@@ -183,4 +144,6 @@ body {
 	.navbar .input-group {
 		width: 100%;
 	}
+	
 }
+

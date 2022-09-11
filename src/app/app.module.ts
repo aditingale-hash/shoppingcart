@@ -15,7 +15,11 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdminComponent } from './component/profile/admin/admin.component';
+
 import { FooterHomeComponent } from './component/footer/footer-home/footer-home.component';
+
+import { CategoryHomeComponent } from './component/product/category/category-home/category-home.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +31,9 @@ import { FooterHomeComponent } from './component/footer/footer-home/footer-home.
     WalletHomeComponent,
     LoginComponent,
     AdminComponent,
+
     FooterHomeComponent
+
 
   ],
   imports: [
