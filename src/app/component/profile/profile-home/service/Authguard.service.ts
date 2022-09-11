@@ -13,7 +13,7 @@ export class AuthguardService {
   private getuserApi: string;
 
   constructor(private http: HttpClient) {
-    this.getuserApi="http://localhost:1000/user";
+    this.getuserApi="http://localhost:1001/user/user";
 
   }
 

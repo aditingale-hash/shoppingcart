@@ -1,6 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AppService } from 'src/app/Appservice';
 import { Wallet } from '../model/wallet.model';
+import { WindowRefService } from '../service/wallet-service-window';
 import { WalletServiceService } from '../service/wallet-service.service';
 
 @Component({
@@ -9,12 +11,18 @@ import { WalletServiceService } from '../service/wallet-service.service';
   styleUrls: ['./wallet-home.component.css']
 })
 export class WalletHomeComponent implements OnInit {
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
 
   showBal: boolean;
   balance:number;
   walletList:Wallet[];
-
+/*
   constructor(private wService: WalletServiceService, private appService: AppService) {
+
+  constructor(private http:HttpClient,private wService: WalletServiceService, private appService: AppService,private winRef: WindowRefService) {
+
     this.showBal=false;
     this.balance=0;
     this.walletList=[];
@@ -80,7 +88,8 @@ export class WalletHomeComponent implements OnInit {
 
 
 
- /*temp=	{
+
+ temp=	{
   url:'/wallet/pay',
   data:JSON.stringify({  amount:  amount, info: 'order_request'}),
   contentType: 'application/json',
@@ -135,10 +144,49 @@ export class WalletHomeComponent implements OnInit {
   error:function (error) {
     console.log (error+"erorrrr")
     alert("something went wrong !!"+error)
-  }
-  //invoked when error
+=======
+  createRzpayOrder() {
+    console.log();
+    // call api to create order_id
 
-}
+    this.payWithRazor(this.http.post("http://localhost:1000/wallet/pay",{amount:1000,info:"order"}));
+  }
+
+  payWithRazor(val) {
+    const options: any = {
+      key: 'rzp_test_key',
+      amount: 125500, // amount should be in paise format to display Rs 1255 without decimal point
+      currency: 'INR',
+      name: '', // company name or product name
+      description: '',  // product description
+      image: './assets/logo.png', // company logo or product image
+      order_id: val, // order_id created by you in backend
+      modal: {
+        // We should prevent closing of the form when esc key is pressed.
+        escape: false,
+      },
+      notes: {
+        // include notes if any
+      },
+      theme: {
+        color: '#0c238a'
+      }
+    };
+    options.handler = ((response, error) => {
+      options.response = response;
+      console.log(response);
+      console.log(options);
+      // call your backend api to verify payment signature & capture transaction
+    });
+    options.modal.ondismiss = (() => {
+      // handle the case when user closes the form while transaction is in progress
+      console.log('Transaction cancelled.');
+    });
+    const rzp = new this.winRef.nativeWindow.Razorpay(options);
+    rzp.open();
+>>>>>>> 59bd2f55e53a451d36736ec608b20839437335e0
+  }
+
 
 
 
