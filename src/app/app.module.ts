@@ -16,6 +16,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdminComponent } from './component/profile/admin/admin.component';
+import { CategoryHomeComponent } from './component/product/category/category-home/category-home.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +29,7 @@ import { AdminComponent } from './component/profile/admin/admin.component';
     FooterHomeComponent,
     LoginComponent,
     AdminComponent,
+    CategoryHomeComponent,
 
   ],
   imports: [
