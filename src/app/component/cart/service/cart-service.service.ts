@@ -9,16 +9,23 @@ import { Cart } from '../model/cart.model';
 export class CartServiceService {
   activateAPI: string;
    getAllCartApi:string;
+   deleteItemApi:string;
   constructor(private http:HttpClient) { 
-   // this.activateAPI="http://localhost:1000/cart/activate/";
+   
     this.getAllCartApi="http://localhost:1003/cart/allcart";
+    this.deleteItemApi="http://localhost:1003/cart/deleteItem/";
   }
 
-  public activateCart(userId: number): Observable<number>{
-    return this.http.put<number>(this.activateAPI+userId, {});
-  }
+ 
 
   public getAllCarts():Observable<Cart[]>{
     return this.http.get<Cart[]>(this.getAllCartApi);
   }
+  public deleteItem(pId:number):Observable<Cart[]>{
+    return this.http.delete<Cart[]>(this.getAllCartApi+pId);
+  }
+
+
+  
+
 }
