@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AppService } from 'src/app/Appservice';
+import { Product } from '../../product/product-home/model/product.model';
+import { ProductService } from '../../product/service/product.service';
 
 @Component({
   selector: 'app-navbar-home',
@@ -6,10 +9,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar-home.component.css']
 })
 export class NavbarHomeComponent implements OnInit {
-
-  constructor() { }
+product:Product[];
+  constructor(private appService: AppService,private productService: ProductService) { }
   loggedIn:boolean;
   username:string;
+  count:number;
   ngOnInit(): void {
 
     let status = localStorage.getItem('isLoggedIn');
@@ -23,7 +27,10 @@ export class NavbarHomeComponent implements OnInit {
             this.loggedIn = false;
         }
 
-
+        this.appService.cart_product.subscribe(data=>{
+          this.product=data;
+          this.count=this.product.length;
+        });
 
   }
 
