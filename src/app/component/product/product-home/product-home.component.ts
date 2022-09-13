@@ -12,6 +12,7 @@ import { Product } from './model/product.model';
 export class ProductHomeComponent implements OnInit {
 categoryName: string;
 product:Product[]
+productArr:Product
   constructor(private actRoute: ActivatedRoute, private productService: ProductService,private appService: AppService) { }
 
   ngOnInit(): void {
@@ -21,7 +22,7 @@ product:Product[]
         });
   }
 
-  addToCart(){
+ /* addToCart(){
 
     //extract the array out of subject
 
@@ -32,6 +33,18 @@ product:Product[]
 
     this.appService.cart_product.next(productArray);
 
+  }*/
+
+  productByCartId(){
+
+    this.productService.postProductByCartID(this.appService.cId.value,this.appService.pId.value).subscribe(data=>{
+this.productArr=data;
+console.log("1");
+console.log(data);
+let productArray=this.appService.cart_product.value;
+this.appService.cart_product.next(productArray);
+    })
+    
   }
 
 

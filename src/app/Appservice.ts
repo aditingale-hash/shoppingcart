@@ -11,6 +11,9 @@ export class AppService{
   userId = new BehaviorSubject<number>(9);
   walletId = new BehaviorSubject<number>(11);
   cart_product=new BehaviorSubject([]);
+  cId = new BehaviorSubject<number>(0);
+  pId = new BehaviorSubject<number>(0);
+
   //[] is initial value of cart_product.
 
 
