@@ -56,7 +56,7 @@ export class ProfileHomeComponent implements OnInit {
      let password = this.loginForm.value.password;
 
 
-      //this.password1=this.user.find(u=>(atob(u.encrytedPassword)));
+     // this.password1=this.user.find(u=>(atob(u.encrytedPassword)));
      let user1  = this.user.find(u=> (u.userName === username || u.encrytedPassword === password));
     // this.username=atob(localStorage.getItem('token')).split(':')[0];
    // this.doctor = this.user.find(u=> (u.username === this.username));

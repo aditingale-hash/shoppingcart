@@ -10,8 +10,8 @@ export class RegisterService {
   RegisterApi:string;
   getalluser:string;
   constructor(private http:HttpClient) {
-    this.RegisterApi="http://localhost:1001/users/";
-    this.getalluser="http://localhost:1001/user1";
+    this.RegisterApi="http://localhost:1001/user/user";
+    this.getalluser="http://localhost:1001/user/user";
   }
 
   public Register(user:userRegister):Observable<userRegister>{
