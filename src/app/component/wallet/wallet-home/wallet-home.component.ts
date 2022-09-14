@@ -5,6 +5,8 @@ import { Wallet } from '../model/wallet.model';
 import { WindowRefService } from '../service/wallet-service-window';
 import { WalletServiceService } from '../service/wallet-service.service';
 
+declare var paymentStart:any;
+
 @Component({
   selector: 'app-wallet-home',
   templateUrl: './wallet-home.component.html',
@@ -15,17 +17,26 @@ export class WalletHomeComponent implements OnInit {
   showBal: boolean;
   balance:number;
   walletList:Wallet[];
+  price:number;
+  amount:number;
+  wid:number;
 
   constructor(private http:HttpClient,private wService: WalletServiceService, private appService: AppService,private winRef: WindowRefService) { 
     this.showBal=false;
     this.balance=0;
     this.walletList=[];
+    this.price=0;
+    this.amount=1000;
+    this.wid=appService.walletId.value;
   }
 
   ngOnInit(): void {
   }
 
-  
+  pay(){
+    
+    paymentStart(1000);
+  }
 
   activateWalletByUserid(){
     console.log("Activate");
@@ -55,7 +66,6 @@ export class WalletHomeComponent implements OnInit {
     console.log("statement1");
     this.wService.getStatementByWalletId(this.appService.walletId.value).subscribe(data=>{
       console.log(data);
-      this.walletList=data
     });
   }
 
@@ -73,6 +83,15 @@ export class WalletHomeComponent implements OnInit {
       console.log(data);
     });
   }
+
+  useWalletMoney(){
+    console.log("useWalletMoney");
+    this.wService.useWalletMoney(0).subscribe(data=>{
+      console.log(data);
+      this.price=data;
+    });
+  }
+
 
 
 

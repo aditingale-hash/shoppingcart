@@ -1,6 +1,5 @@
 <section>
-    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-
+    
 
     <div class="row" style="margin-top: 50px;">
 
@@ -11,6 +10,8 @@
             <div class="btn-group" role="group" aria-label="Basic outlined example">
                 <button (click)="activateWalletByUserid()" type="button"
                     class="btn btn-outline-secondary">Activate</button>&nbsp;&nbsp;&nbsp;
+                    <button (click)="useWalletMoney()" type="button"
+                    class="btn btn-outline-secondary">Use Wallet Money</button>&nbsp;&nbsp;&nbsp;
                 <button (click)="checkBalanceByUserid()" type="button" class="btn btn-outline-secondary">Check
                     Balance</button>&nbsp;&nbsp;&nbsp;
                 <button (click)="showAllWallets()" type="button" class="btn btn-outline-secondary">Show All
@@ -23,7 +24,9 @@
                     class="btn btn-outline-secondary">Update</button>&nbsp;&nbsp;&nbsp;
                 <button (click)="deactivateWalletByUserid()" type="button"
                     class="btn btn-outline-secondary">Deactivate</button>&nbsp;&nbsp;&nbsp;
-                <button (click)="createRzpayOrder()" type="button" class="btn btn-outline-secondary">pay</button>
+                <button (click)="pay()" type="button" class="btn btn-outline-secondary">pay</button>
+                <input hidden type="text" style=" pointer-events: none;" [value]="amount">
+                <h1 hidden id="wid">{{wid}}</h1>
             </div>
 
 
@@ -43,6 +46,12 @@
         <div class="col-4"></div>
 
     </div>
+
+
+    <div>
+        
+    </div>
+
 
 
 </section>
