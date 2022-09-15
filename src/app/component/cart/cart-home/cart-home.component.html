@@ -1,1 +1,52 @@
-<p>cart-home works!</p>
+<section>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+
+    <div class="row" style="margin-top: 50px;">
+
+        <div class="col-2"></div>
+        <div class="col-8">
+
+
+        <div class="btn-group" role="group" aria-label="Basic outlined example">
+                
+                    
+           
+                <button  type="button" class="btn btn-outline-secondary">Show All
+                    Carts</button>&nbsp;&nbsp;&nbsp;
+                
+                <button (click)="getProductFromCart()" type="button" class="btn btn-outline-secondary">Show My Cart</button>&nbsp;&nbsp;&nbsp;
+                <button (click)="deleteItemsByCartId()" type="button"
+                    class="btn btn-outline-secondary">Delete My Cart</button>&nbsp;&nbsp;&nbsp;
+                
+
+
+
+        </div>
+        <div class="col-2"></div>
+
+    </div>
+
+
+</div>
+
+<div class="row">
+    <div class="col-sm-4" *ngFor="let p of products">
+        <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">:ID {{p.id}}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Name:{{p.productName}}</h6>
+              <p class="card-text">Type{{p.productType}}</p>
+              <h6 class="text-success">Free shipping</h6>
+              <div class="d-flex flex-column mt-4"><button  class="btn btn-primary btn-sm" type="button" >Remove</button></div>
+              
+              &nbsp;
+              
+            </div>
+          </div>
+
+        </div>
+
+</div>
+
+</section>

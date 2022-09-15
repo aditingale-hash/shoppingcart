@@ -14,12 +14,15 @@ export class WalletServiceService {
   statementWIDAPI: string;
   showStatement:string;
   deactivateAPI:string;
+  useWalletMoneyAPI: string;
 
   constructor(private http:HttpClient, private appService: AppService) { 
     this.activateAPI="http://localhost:1000/wallet/activate/";
     this.deactivateAPI="http://localhost:1000/wallet/deactivate/";
     this.statementWIDAPI="http://localhost:1000/wallet/getStatementByWallet/"+this.appService.walletId.value;
     this.showStatement="http://localhost:1000/wallet/statement/allStatements";
+    this.useWalletMoneyAPI="http://localhost:1000/wallet/getWalletMoney/";
+
   }
 
   public activateWallet(wid: number){
@@ -42,4 +45,12 @@ export class WalletServiceService {
     return this.http.get<Wallet[]>(this.showStatement);
   }
 
+  public useWalletMoney(price: number):Observable<number>{
+    return this.http.get<number>(this.useWalletMoneyAPI+price);
+  }
+
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> afa83606770b13d61311ddf82f432d5f3ed301ad
