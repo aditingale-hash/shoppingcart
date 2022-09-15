@@ -49,4 +49,8 @@ export class WalletServiceService {
     return this.http.get<number>(this.useWalletMoneyAPI+price);
   }
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> afa83606770b13d61311ddf82f432d5f3ed301ad
