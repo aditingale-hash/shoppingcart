@@ -1,21 +1,24 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Product } from '../../product-home/model/product.model';
+import { Category } from '../category-home/Category';
+
 
 @Injectable({
   providedIn: 'root'
 })
-export class CategoryService {
+export class CategoryserviceService {
 
-  private getProductByCatNameApi: string;
-   
-  constructor(private http: HttpClient) {
-    this.getProductByCatNameApi ='http://localhost:1002/product/category/';
-  }
+   /*
+      Fetch the data from API
+  */
+      private getCategoryApi: string;
 
-  public getProductByCatId(catname:string) : Observable<Product[]>{
- 
-    return this.http.get<Product[]>(this.getProductByCatNameApi + catname);
-  }
+      constructor(private http: HttpClient) {
+        this.getCategoryApi="http://localhost:1002/category";
+      }
+
+      getAllCategories():Observable<Category[]> {
+        return this.http.get<Category[]>(this.getCategoryApi);
+      }
 }

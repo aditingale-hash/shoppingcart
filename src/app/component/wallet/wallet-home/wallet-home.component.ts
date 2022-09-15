@@ -6,6 +6,8 @@ import { Wallet } from '../model/wallet.model';
 import { WindowRefService } from '../service/wallet-service-window';
 import { WalletServiceService } from '../service/wallet-service.service';
 
+import Swal from 'sweetalert2/dist/sweetalert2.js'; 
+
 declare var paymentStart:any;
 
 @Component({
@@ -45,7 +47,9 @@ export class WalletHomeComponent implements OnInit {
     console.log("Activate");
     this.wService.activateWallet(this.appService.walletId.value).subscribe(data=>{
       console.log(data);
-    });
+    },
+    error=>{ Swal.fire("Oops!", "Something went wrong!", "error");}
+    );
   }
 
   checkBalanceByUserid(){
@@ -53,7 +57,9 @@ export class WalletHomeComponent implements OnInit {
     this.wService.getBalance(1).subscribe(data=>{
       console.log(data);
       this.balance=data;
-    });
+    },
+    error=>{ Swal.fire("Oops!", "Something went wrong!", "error");}
+    );
     console.log("Check B");
   }
 
@@ -70,7 +76,9 @@ export class WalletHomeComponent implements OnInit {
     this.wService.getStatementByWalletId().subscribe(data=>{
       console.log(data);
       this.statementList=data;
-    });
+    },
+    error=>{ Swal.fire("Oops!", "Something went wrong!", "error");}
+    );
   }
 
   statements(){
@@ -78,14 +86,18 @@ export class WalletHomeComponent implements OnInit {
     this.wService.showAllStatements().subscribe(data=>{
       console.log(data);
       this.walletList=data
-    });
+    },
+    error=>{ Swal.fire("Oops!", "Something went wrong!", "error");}
+    );
   }
 
   deactivateWalletByUserid(){
     console.log("deactivate");
     this.wService.deactivateWallet(this.appService.walletId.value).subscribe(data=>{
       console.log(data);
-    });
+    },
+    error=>{ Swal.fire("Oops!", "Something went wrong!", "error");}
+    );
   }
 
   useWalletMoney(){
@@ -93,7 +105,9 @@ export class WalletHomeComponent implements OnInit {
     this.wService.useWalletMoney(this.amount).subscribe(data=>{
       console.log(data);
       this.amount=data;
-    });
+    },
+    error=>{ Swal.fire("Oops!", "Something went wrong!", "error");}
+    );
   }
 
 

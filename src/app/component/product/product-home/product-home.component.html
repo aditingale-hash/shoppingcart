@@ -1,67 +1,37 @@
-<div class="container mt-5 mb-5">
-    
-    <div class="d-flex justify-content-center row">
-        <div class="col-md-10">
-            <div class="row p-2 bg-white border rounded">
-                <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image" src="../../../../assets/images/top3.webp"></div>
-                <div class="col-md-6 mt-1">
-                    <b>TOPWEAR</b>
-                    <div class="d-flex flex-row">
-                        <div class="ratings mr-2"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div><span>210</span>
-                    </div>
-                    <h5 class="bold">Neck tie flaire Sleeve blauson top</h5>
-                   
-                    <p class="text-justify text-truncate para mb-0">Best Deal of the season
-                        <br><br></p>
-                </div>
-                <div class="align-items-center align-content-center col-md-3 border-left mt-1">
-                    <div class="d-flex flex-row align-items-center">
-                        <h4 class="mr-1">599.0</h4><span class="strike-text">RS.999.0 </span>
-                    </div>
-                    <h6 class="text-success">Free shipping</h6>
-                    <div class="d-flex flex-column mt-4"><button  class="btn btn-primary btn-sm"  (click)="productByCartId()" type="button">Add to Cart</button></div></div>
-                </div>
-            </div>
-            <div class="row p-2 bg-white border rounded">
-                <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image" src="../../../../assets/images/top4.webp"></div>
-                <div class="col-md-6 mt-1">
-                    <b>TOPWEAR</b>
-                    <div class="d-flex flex-row">
-                        <div class="ratings mr-2"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div><span>290</span>
-                    </div>
-                    <h5 class="bold">Lymio Women Top</h5>
-                   
-                    <p class="text-justify text-truncate para mb-0">Best Deal of the season<br><br></p>
-                </div>
-                <div class="align-items-center align-content-center col-md-3 border-left mt-1">
-                    <div class="d-flex flex-row align-items-center">
-                        <h4 class="mr-1">899.0</h4><span class="strike-text">RS.1299.0 </span>
-                    </div>
-                    <h6 class="text-success">Free shipping</h6>
-                    <div class="d-flex flex-column mt-4"><a href="/cart"><button  class="btn btn-primary btn-sm" type="button">Add to Cart</button></a></div>
-                     
-                </div>
-            </div>
-            <div class="row p-2 bg-white border rounded">
-                <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image" src="../../../../assets/images/top5.webp"></div>
-                <div class="col-md-6 mt-1">
-                    <b>TOPWEAR</b>
-                    <div class="d-flex flex-row">
-                        <div class="ratings mr-2"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div><span>310</span>
-                    </div>
-                    <h5 class="bold">CLEMIRA Fancy Women's Top</h5>
-                   
-                    <p class="text-justify text-truncate para mb-0">Best Deal of the season<br><br></p>
-                </div>
-                <div class="align-items-center align-content-center col-md-3 border-left mt-1">
-                    <div class="d-flex flex-row align-items-center">
-                        <h4 class="mr-1">399.0</h4><span class="strike-text">RS.799.0 </span>
-                    </div>
-                    <h6 class="text-success">Free shipping</h6>
-                    <div class="d-flex flex-column mt-4"><a href="/cart"><button  class="btn btn-primary btn-sm" type="button">Add to Cart</button></a></div></div>
-                </div>
-            </div>
-            
-        </div>
-       
- 
+<div class="alert alert-primary" role="alert" *ngIf="errorMsg">
+  {{errorMsg}}
+</div>
+
+<div class="row">
+  <div class="col-sm-12" *ngFor="let p of products">
+    <div class="card" >
+      <div class="card-body">
+        <h5 class="card-title">{{p.title}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Price: {{p.price}}</h6>
+        <p class="card-text">{{p.shortDescription}}</p>
+        <p class="card-text">{{p.description}}</p>
+
+        <a href="Javascript.void(0)" routerLink="/product/review/{{p.id}}" class="card-link">Reviews & Ratings({{p.reviewCount}})</a>
+        <a href="Javascript.void(0)" routerLink="/cart"  class="card-link">Add to Cart</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- Toaster
+<div class="position-fixed top-0 start-50 translate-middle-x" style="z-index: 11">
+  <div    role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+      <img src="..." class="rounded me-2" alt="...">
+      <strong class="me-auto">Bootstrap</strong>
+      <small>11 mins ago</small>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+      Hello, world! This is a toast message.
+    </div>
+  </div>
+</div>
+-->

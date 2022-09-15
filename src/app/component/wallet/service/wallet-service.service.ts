@@ -17,7 +17,7 @@ export class WalletServiceService {
   deactivateAPI:string;
   useWalletMoneyAPI: string;
 
-  constructor(private http:HttpClient, private appService: AppService) { 
+  constructor(private http:HttpClient, private appService: AppService) {
     this.activateAPI="http://localhost:1000/wallet/activate/";
     this.deactivateAPI="http://localhost:1000/wallet/deactivate/";
     this.statementWIDAPI="http://localhost:1000/wallet/getStatementByWallet/"+this.appService.walletId.value;
@@ -51,3 +51,4 @@ export class WalletServiceService {
   }
 
 }
+

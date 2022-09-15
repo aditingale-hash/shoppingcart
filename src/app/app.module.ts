@@ -19,11 +19,12 @@ import { AdminComponent } from './component/profile/admin/admin.component';
 import { FooterHomeComponent } from './component/footer/footer-home/footer-home.component';
 
 import { CategoryHomeComponent } from './component/product/category/category-home/category-home.component';
+import { CartItemComponent } from './component/cart/cart-item/cart-item.component';
+import { ReviewComponent } from './component/product/review/review.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarHomeComponent,
     ProfileHomeComponent,
     CartHomeComponent,
     OrderHomeComponent,
@@ -31,8 +32,11 @@ import { CategoryHomeComponent } from './component/product/category/category-hom
     WalletHomeComponent,
     LoginComponent,
     AdminComponent,
-
-    FooterHomeComponent
+CategoryHomeComponent,
+    FooterHomeComponent,
+      CartItemComponent,
+      NavbarHomeComponent,
+      ReviewComponent
 
 
   ],
