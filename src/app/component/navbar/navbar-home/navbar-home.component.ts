@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from 'src/app/Appservice';
 import { Product } from '../../product/product-home/model/product.model';
-import { ProductService } from '../../product/service/product.service';
+import {  ProductserviceService } from '../../product/service/product.service';
 
 @Component({
   selector: 'app-navbar-home',
@@ -10,7 +10,7 @@ import { ProductService } from '../../product/service/product.service';
 })
 export class NavbarHomeComponent implements OnInit {
 product:Product[];
-  constructor(private appService: AppService,private productService: ProductService) { }
+  constructor(private appService: AppService,private productService: ProductserviceService) { }
   loggedIn:boolean;
   username:string;
   count:number;
