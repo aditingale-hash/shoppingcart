@@ -1,4 +1,5 @@
 export interface userRegister{
+  id?:number,
   username?:string,
   encrytedPassword?:string,
   role?:string,

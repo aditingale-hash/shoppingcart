@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { AppService } from 'src/app/Appservice';
 import { userRegister } from './model/Register';
 import { RegisterService } from './service/register.service';
 
@@ -14,7 +15,7 @@ export class LoginComponent implements OnInit {
   Register:FormGroup;
   post:userRegister;
   resgiteruser:userRegister[];
-  constructor(private registerservice:RegisterService) { }
+  constructor(private registerservice:RegisterService, private appService: AppService) { }
 
   ngOnInit(): void {
 
@@ -51,8 +52,16 @@ export class LoginComponent implements OnInit {
 
  console.log(this.post);
  this.registerservice.Register(this.post).subscribe(data=>{
-  console.log(this.resgiteruser.push(data));
+    console.log(this.resgiteruser.push(data));
+    this.appService.userId.next(data.id);
+  });
 
+  this.registerservice.getWalletId(this.appService.userId.value).subscribe(data=>{
+    this.appService.walletId.next(data);
+  });
+
+  this.registerservice.getCartId(this.appService.userId.value).subscribe(data=>{
+    this.appService.cartId.next(data);
   });
 
 }
