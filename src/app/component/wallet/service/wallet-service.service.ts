@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AppService } from 'src/app/Appservice';
+import { Statement } from '../model/statement.model';
 import { Wallet } from '../model/wallet.model';
 
 @Injectable({
@@ -21,7 +22,7 @@ export class WalletServiceService {
     this.deactivateAPI="http://localhost:1000/wallet/deactivate/";
     this.statementWIDAPI="http://localhost:1000/wallet/getStatementByWallet/"+this.appService.walletId.value;
     this.showStatement="http://localhost:1000/wallet/statement/allStatements";
-    this.useWalletMoneyAPI="http://localhost:1000/wallet/getWalletMoney/";
+    this.useWalletMoneyAPI="http://localhost:1000/wallet/getWalletMoney/56/";
 
   }
 
@@ -37,16 +38,16 @@ export class WalletServiceService {
     return this.http.get<number>("http://localhost:1000/wallet/getBalance/"+uid);
   }
 
-  public getStatementByWalletId(wid: number): Observable<Wallet[]>{
-    return this.http.get<Wallet[]>(this.statementWIDAPI);
+  public getStatementByWalletId(): Observable<Statement[]>{
+    return this.http.get<Statement[]>(this.statementWIDAPI);
   }
 
   public showAllStatements(): Observable<Wallet[]>{
     return this.http.get<Wallet[]>(this.showStatement);
   }
 
-  public useWalletMoney(price: number):Observable<number>{
-    return this.http.get<number>(this.useWalletMoneyAPI+price);
+  public useWalletMoney(amount: number):Observable<number>{
+    return this.http.get<number>(this.useWalletMoneyAPI+amount);
   }
 
 }

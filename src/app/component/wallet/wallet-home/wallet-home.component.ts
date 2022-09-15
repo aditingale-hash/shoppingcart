@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AppService } from 'src/app/Appservice';
+import { Statement } from '../model/statement.model';
 import { Wallet } from '../model/wallet.model';
 import { WindowRefService } from '../service/wallet-service-window';
 import { WalletServiceService } from '../service/wallet-service.service';
@@ -20,6 +21,7 @@ export class WalletHomeComponent implements OnInit {
   price:number;
   amount:number;
   wid:number;
+  statementList:Statement[];
 
   constructor(private http:HttpClient,private wService: WalletServiceService, private appService: AppService,private winRef: WindowRefService) { 
     this.showBal=false;
@@ -28,6 +30,7 @@ export class WalletHomeComponent implements OnInit {
     this.price=0;
     this.amount=1000;
     this.wid=appService.walletId.value;
+    this.statementList=[];
   }
 
   ngOnInit(): void {
@@ -64,8 +67,9 @@ export class WalletHomeComponent implements OnInit {
 
   statementByUserid(){
     console.log("statement1");
-    this.wService.getStatementByWalletId(this.appService.walletId.value).subscribe(data=>{
+    this.wService.getStatementByWalletId().subscribe(data=>{
       console.log(data);
+      this.statementList=data;
     });
   }
 
@@ -86,9 +90,9 @@ export class WalletHomeComponent implements OnInit {
 
   useWalletMoney(){
     console.log("useWalletMoney");
-    this.wService.useWalletMoney(0).subscribe(data=>{
+    this.wService.useWalletMoney(this.amount).subscribe(data=>{
       console.log(data);
-      this.price=data;
+      this.amount=data;
     });
   }
 
