@@ -23,16 +23,12 @@ productArr:Product
   }
 
  /* addToCart(){
-
     //extract the array out of subject
-
     let productArray=this.appService.cart_product.value;
     //push the product into extracted array;
     //productArray.push(product);
     //update the subject with new value of extracted array
-
     this.appService.cart_product.next(productArray);
-
   }*/
 
   productByCartId(){
