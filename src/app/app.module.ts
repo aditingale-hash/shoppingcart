@@ -19,6 +19,7 @@ import { AdminComponent } from './component/profile/admin/admin.component';
 import { FooterHomeComponent } from './component/footer/footer-home/footer-home.component';
 
 import { CategoryHomeComponent } from './component/product/category/category-home/category-home.component';
+import { CartItemComponent } from './component/cart/cart-item/cart-item.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { CategoryHomeComponent } from './component/product/category/category-hom
     LoginComponent,
     AdminComponent,
 
-    FooterHomeComponent
+    FooterHomeComponent,
+      CartItemComponent
 
 
   ],

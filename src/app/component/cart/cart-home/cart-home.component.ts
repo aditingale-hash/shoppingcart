@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AppService } from 'src/app/Appservice';
 import { Cart } from '../model/cart.model';
+import { Product } from '../model/product.model';
 import { CartServiceService } from '../service/cart-service.service';
 
 @Component({
@@ -12,6 +13,7 @@ import { CartServiceService } from '../service/cart-service.service';
 })
 export class CartHomeComponent implements OnInit {
 cart:Cart[];
+products:Product[];
   constructor(private http:HttpClient,private cService:CartServiceService, private appService: AppService,private actRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -44,6 +46,39 @@ cart:Cart[];
     )
   }
 
+  getProductFromCart(){
+    this.actRoute.params.subscribe(
+      params=>{
+        this.cService.getProductByCartId(params.cid)
+        .subscribe(data=>{
+          this.products=data;
+          console.log(this.products)
+        },
+        error=>{
+          //this.errorMsg='not found'
+        }
+        );
+      }
+    )
+  }
+
+  deleteItemsByCartId(){
+    
+        this.cService.deleteItemsByCartId(1)
+        .subscribe(data=>{
+          this.products=[];
+
+        },
+        error=>{
+         // this.errorMsg='not found'
+        }
+        );
+      }
+    
+  }
+
+
+
  
 
-}
+

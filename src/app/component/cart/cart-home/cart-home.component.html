@@ -1,71 +1,52 @@
-<div class="container mt-5 mb-5">
-    <h1>My Cart</h1> &nbsp;&nbsp;
-  <div class="d-flex justify-content-center row">
-      <div class="col-md-10">
-          <div class="row p-2 bg-white border rounded">
-              <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image" src="../../../../assets/images/top3.webp"></div>
-              <div class="col-md-6 mt-1">
-                  <b>TOPWEAR</b>
-                  <div class="d-flex flex-row">
-                      <div class="ratings mr-2"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div><span>210</span>
-                  </div>
-                  <h5 class="bold">Neck tie flaire Sleeve blauson top</h5>
-                 
-                  <p class="text-justify text-truncate para mb-0">Best Deal of the season
-                      <br><br></p>
-              </div>
-              <div class="align-items-center align-content-center col-md-3 border-left mt-1">
-                  <div class="d-flex flex-row align-items-center">
-                      <h4 class="mr-1">599.0</h4><span class="strike-text">RS.999.0 </span>
-                  </div>
-                  <h6 class="text-success">Free shipping</h6>
-                  <div class="d-flex flex-column mt-4"><a href="/cart"><button  class="btn btn-primary btn-sm" type="button" (click)="deleteItem()">Remove</button></a></div>
-                </div>
-                  
-              </div>
-          </div>
-          <div class="row p-2 bg-white border rounded">
-              <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image" src="../../../../assets/images/top4.webp"></div>
-              <div class="col-md-6 mt-1">
-                  <b>TOPWEAR</b>
-                  <div class="d-flex flex-row">
-                      <div class="ratings mr-2"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div><span>290</span>
-                  </div>
-                  <h5 class="bold">Lymio Women Top</h5>
-                 
-                  <p class="text-justify text-truncate para mb-0">Best Deal of the season<br><br></p>
-              </div>
-              <div class="align-items-center align-content-center col-md-3 border-left mt-1">
-                  <div class="d-flex flex-row align-items-center">
-                      <h4 class="mr-1">899.0</h4><span class="strike-text">RS.1299.0 </span>
-                  </div>
-                  <h6 class="text-success">Free shipping</h6>
-                  <div class="d-flex flex-column mt-4"><a href="/cart"><button  class="btn btn-primary btn-sm" type="button">Remove</button></a></div>
+<section>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+
+    <div class="row" style="margin-top: 50px;">
+
+        <div class="col-2"></div>
+        <div class="col-8">
+
+
+        <div class="btn-group" role="group" aria-label="Basic outlined example">
                 
-              </div>
-          </div>
-          <div class="row p-2 bg-white border rounded">
-              <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image" src="../../../../assets/images/top5.webp"></div>
-              <div class="col-md-6 mt-1">
-                  <b>TOPWEAR</b>
-                  <div class="d-flex flex-row">
-                      <div class="ratings mr-2"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div><span>310</span>
-                  </div>
-                  <h5 class="bold">CLEMIRA Fancy Women's Top</h5>
-                 
-                  <p class="text-justify text-truncate para mb-0">Best Deal of the season<br><br></p>
-              </div>
-              <div class="align-items-center align-content-center col-md-3 border-left mt-1">
-                  <div class="d-flex flex-row align-items-center">
-                      <h4 class="mr-1">399.0</h4><span class="strike-text">RS.799.0 </span>
-                  </div>
-                  <h6 class="text-success">Free shipping</h6>
-                  <div class="d-flex flex-column mt-4"><a href="/cart"><button  class="btn btn-primary btn-sm" type="button">Remove</button></a></div>
+                    
+           
+                <button  type="button" class="btn btn-outline-secondary">Show All
+                    Carts</button>&nbsp;&nbsp;&nbsp;
+                
+                <button (click)="getProductFromCart()" type="button" class="btn btn-outline-secondary">Show My Cart</button>&nbsp;&nbsp;&nbsp;
+                <button (click)="deleteItemsByCartId()" type="button"
+                    class="btn btn-outline-secondary">Delete My Cart</button>&nbsp;&nbsp;&nbsp;
+                
+
+
+
+        </div>
+        <div class="col-2"></div>
+
+    </div>
+
+
+</div>
+
+<div class="row">
+    <div class="col-sm-4" *ngFor="let p of products">
+        <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">:ID {{p.id}}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Name:{{p.productName}}</h6>
+              <p class="card-text">Type{{p.productType}}</p>
+              <h6 class="text-success">Free shipping</h6>
+              <div class="d-flex flex-column mt-4"><button  class="btn btn-primary btn-sm" type="button" >Remove</button></div>
+              
+              &nbsp;
+              
             </div>
-                  
-              </div>
           </div>
-         
-      </div>
-     
-     <div style="margin-left: 50%;"class="d-flex flex-column mt-4"><a href="/order"><button  class="btn btn-secondary btn-sm" type="button">Place Order</button></a></div>
+
+        </div>
+
+</div>
+
+</section>

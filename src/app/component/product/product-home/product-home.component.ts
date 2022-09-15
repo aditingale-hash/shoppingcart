@@ -39,9 +39,10 @@ productArr:Product
 
     this.productService.postProductByCartID(this.appService.cId.value,this.appService.pId.value).subscribe(data=>{
 this.productArr=data;
-console.log("1");
+//console.log("1");
 console.log(data);
 let productArray=this.appService.cart_product.value;
+//productArray.push(pro)
 this.appService.cart_product.next(productArray);
     })
     
