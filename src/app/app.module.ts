@@ -20,11 +20,11 @@ import { FooterHomeComponent } from './component/footer/footer-home/footer-home.
 
 import { CategoryHomeComponent } from './component/product/category/category-home/category-home.component';
 import { CartItemComponent } from './component/cart/cart-item/cart-item.component';
+import { ReviewComponent } from './component/product/review/review.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarHomeComponent,
     ProfileHomeComponent,
     CartHomeComponent,
     OrderHomeComponent,
@@ -32,9 +32,11 @@ import { CartItemComponent } from './component/cart/cart-item/cart-item.componen
     WalletHomeComponent,
     LoginComponent,
     AdminComponent,
-
+CategoryHomeComponent,
     FooterHomeComponent,
-      CartItemComponent
+      CartItemComponent,
+      NavbarHomeComponent,
+      ReviewComponent
 
 
   ],

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Product } from '../../product-home/model/product.model';
-import { ProductService } from '../../service/product.service';
+
+import { CategoryserviceService } from '../service/category.service';
+import { Category } from './Category';
 
 @Component({
   selector: 'app-category-home',
@@ -10,15 +11,21 @@ import { ProductService } from '../../service/product.service';
 })
 export class CategoryHomeComponent implements OnInit {
 
-  categoryName: string;
-  product:Product[]
-    constructor(private actRoute: ActivatedRoute, private productService: ProductService) { }
-  
-    ngOnInit(): void {
-      this.productService.getProductByCatId(this.categoryName)
-          .subscribe(data=>{
-              this.product = data;
-          });
-    }
+  /*
+    Reach out to service(CategoryService) which will provide the data.
+  */
+    categories: Category[];
+    errorMsg:string;
+
+     constructor(private categoryService: CategoryserviceService) { }
+
+     ngOnInit(): void {
+       this.categoryService.getAllCategories().subscribe(data=>{
+         this.categories = data;
+       },
+       error=>{
+         this.errorMsg="Error in Loading Categories, Please contact Administrator";
+       });
+     }
 
 }

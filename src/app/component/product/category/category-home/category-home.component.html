@@ -1,125 +1,20 @@
 <header class="banner">
     <h1></h1>
   </header>
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-  <!------ Include the above in your HEAD tag ---------->
-  
-  <div class="container">
-    <div class="row">
-        <div class="col-lg-4">
-            <div class="card p-0">
-                <div class="card-image">
-                    <img src="../../../../../assets/images/men.jpg"
-                        alt="">
-                </div>
-                <div class="card-content d-flex flex-column align-items-center">
-                    <h4 class="pt-2">MEN</h4>
-                    <h5>TOP BRANDS</h5>
+  <div class="alert alert-primary" role="alert" *ngIf="errorMsg">
+    {{errorMsg}}
+  </div>
 
-                    <ul class="social-icons d-flex justify-content-center">
-                        <li style="--i:1">
-                            <a href="">
-                                <button  type="button" class="btn btn-outline-dark">VIEW</button>
-                            </a>
-                        </li>
-                      
-                    </ul>
-                </div>
-            </div>
+  <div class="row">
+    <div class="col-sm-3" *ngFor="let c of categories">
+      <div class="card" >
+        <div class="card-body">
+          <h5 class="card-title">{{c.name}}</h5>
+
+          <a href="Javascript.void(0)" routerLink="/product/{{c.id}}" class="card-link">View All Products</a>
+
         </div>
-
-        <div class="col-lg-4">
-            <div class="card p-0">
-                <div class="card-image">
-                    <img src="../../../../../assets/images/wo.jpg"
-                        alt="">
-                </div>
-                <div class="card-content d-flex flex-column align-items-center">
-                    <h4 class="pt-2">WOMEN</h4>
-                    <h5>TOP BRANDS</h5>
-
-                    <ul class="social-icons d-flex justify-content-center">
-                        <li style="--i:1">
-                            <a href="/product/category/women">
-                                <button  type="button" class="btn btn-outline-dark">VIEW</button>
-                            </a>
-                        </li>
-                      
-                    </ul>
-                </div>
-            </div>
-        </div>  <div class="col-lg-4">
-            <div class="card p-0">
-                <div class="card-image">
-                    <img src="../../../../../assets/images/kkk.webp"
-                        alt="">
-                </div>
-                <div class="card-content d-flex flex-column align-items-center">
-                    <h4 class="pt-2">KIDS</h4>
-                    <h5>TOP BRANDS</h5>
-
-                    <ul class="social-icons d-flex justify-content-center">
-                        <li style="--i:1">
-                            <a href="">
-                                <button  type="button" class="btn btn-outline-dark">VIEW</button>
-                            </a>
-                        </li>
-                      
-                    </ul>
-                </div>
-            </div>
-            <br><br> <br><br> <br><br> <br><br> <br><br> <br><br> <br><br> <br><br> 
-            
-        </div>  
-        <div class="col-lg-4" >
-            <div class="card p-0">
-                <div class="card-image">
-                    <img src="../../../../../assets/images/f.jpg"
-                        alt="">
-                </div>
-                <div class="card-content d-flex flex-column align-items-center">
-                    <h4 class="pt-2">FURNITURE</h4>
-                    <h5>TOP BRANDS</h5>
-
-                    <ul class="social-icons d-flex justify-content-center">
-                        <li style="--i:1">
-                            <a href="">
-                                <button  type="button" class="btn btn-outline-dark">VIEW</button>
-                            </a>
-                        </li>
-                      
-                    </ul>
-                </div>
-            </div>
-            
-        </div> 
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-         <div class="col-lg-4">
-            <div class="card p-0">
-                <div class="card-image">
-                    <img src="../../../../../assets/images/working.jpg"
-                        alt="">
-                </div>
-                <div class="card-content d-flex flex-column align-items-center">
-                    <h4 class="pt-2">APPLIANCES</h4>
-                    <h5>TOP BRANDS</h5>
-
-                    <ul class="social-icons d-flex justify-content-center">
-                        <li style="--i:1">
-                            <a href="">
-                                <button  type="button" class="btn btn-outline-dark">VIEW</button>
-                            </a>
-                        </li>
-                      
-                    </ul>
-                </div>
-            </div>
-        </div>
-        
+      </div>
     </div>
-</div>
-   
+
+  </div>

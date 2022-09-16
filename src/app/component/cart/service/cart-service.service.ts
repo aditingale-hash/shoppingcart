@@ -17,7 +17,7 @@ export class CartServiceService {
   constructor(private http:HttpClient) { 
    
     this.getAllCartApi="http://localhost:1003/cart/allcart";
-    //this.deleteItemApi="http://localhost:1003/cart/deleteItem/";
+    this.deleteItemApi="http://localhost:1003/cart/deleteItem/";
     this.getProductByCartIDApi="http://localhost:1003/cart/item/";
     this.deleteItemByCartIdApi="http://localhost:1003/cart/deleteItem/";
   }
@@ -27,8 +27,8 @@ export class CartServiceService {
   public getAllCarts():Observable<Cart[]>{
     return this.http.get<Cart[]>(this.getAllCartApi);
   }
-  public deleteItem(pId:number):Observable<Cart[]>{
-    return this.http.delete<Cart[]>(this.getAllCartApi+pId);
+  public deleteItem(cId:number,pId:number):Observable<Cart[]>{
+    return this.http.delete<Cart[]>(this.deleteItemApi+1+"/"+4,{});
   }
 
   public getProductByCartId(catId:number):Observable<Product[]> {

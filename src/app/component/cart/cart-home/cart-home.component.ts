@@ -18,9 +18,21 @@ products:Product[];
 
   ngOnInit(): void {
 
-    
-   
+    this.actRoute.params.subscribe(params=>{
+      this.cService.deleteItem(1,4)
+      .subscribe(data=>{
+        this.products=[];
+
+      },
+      error=>{
+        //this.errorMsg='not found'
+      }
+      );
+    }
+  )
   }
+   
+  
 
   getAllCarts(){
     this.cService.getAllCarts().subscribe(data=>{
@@ -31,20 +43,9 @@ products:Product[];
      )
   }
 
-  deleteItem(){
-    this.actRoute.params.subscribe(
-      params=>{
-        this.cService.deleteItem(params.pId)
-        .subscribe(data=>{
-          //this.cart=data;
-        },
-        error=>{
-         // this.errorMsg='not found'
-        }
-        );
-      }
-    )
-  }
+  
+    
+  
 
   getProductFromCart(){
     this.actRoute.params.subscribe(
@@ -75,6 +76,9 @@ products:Product[];
         );
       }
     
+
+      
+        
   }
 
 
