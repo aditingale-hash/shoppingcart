@@ -46,7 +46,7 @@ export class ProductHomeComponent implements OnInit {
 
   productByCartId(){
 
-    this.productService.postProductByCartID(this.appService.cId.value,this.appService.pId.value).subscribe(data=>{
+    this.productService.postProductByCartID(this.appService.cartId.value,this.appService.productId.value).subscribe(data=>{
 this.productArr=data;
 console.log("1");
 console.log(data);
