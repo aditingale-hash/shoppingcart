@@ -1,17 +1,21 @@
 <section>
 
 
-    <div class="row" style="margin-top: 50px;">
+    <div class="row" style="margin-top: 50px; margin-bottom: 50px;">
 
         <div class="col-2"></div>
         <div class="col-8">
 
 
+<<<<<<< HEAD
         <div class="btn-group" role="group" aria-label="Basic outlined example">
+=======
+            <div class="btn-group" role="group" aria-label="Basic outlined example">
+>>>>>>> 0030e7053850589d81b11e43c3796d932c28bed9
                 <button (click)="activateWalletByUserid()" type="button"
                     class="btn btn-outline-secondary">Activate</button>&nbsp;&nbsp;&nbsp;
-                    <button (click)="useWalletMoney()" type="button"
-                    class="btn btn-outline-secondary">Use Wallet Money</button>&nbsp;&nbsp;&nbsp;
+                <button (click)="useWalletMoney()" type="button" class="btn btn-outline-secondary">Use Wallet
+                    Money{{amount}}</button>&nbsp;&nbsp;&nbsp;
                 <button (click)="checkBalanceByUserid()" type="button" class="btn btn-outline-secondary">Check
                     Balance</button>&nbsp;&nbsp;&nbsp;
                 <button (click)="showAllWallets()" type="button" class="btn btn-outline-secondary">Show All
@@ -37,7 +41,7 @@
     </div>
 
 
-    <div class="row" style="margin-top: 20px;" *ngIf="showBal">
+    <div class="row"  *ngIf="showBal">
 
         <div class="col-4"></div>
         <div class="alert alert-success col-4" role="alert" style="text-align: center;">
@@ -48,9 +52,40 @@
     </div>
 
 
-    <div>
+   <div class="row">
 
+    <div class="col-3"></div>
+    <div class="col-6">
+        <div *ngIf="statementList!=null">
+
+            <table class="table">
+                <thead>
+                    <tr class="table-active" *ngFor="let s of statementList">
+                        <td colspan="2" class="table-active">TransactionID</td>
+                        <td colspan="2" class="table-active">Amount Paid</td>
+                        <td colspan="2" class="table-active">Date</td>
+                    </tr>
+                </thead>
+                <tbody>
+                  <tr class="table-active" *ngFor="let s of statementList">
+                    
+                    <td colspan="2" class="table-active">{{s.orderID}}</td>
+                    <td colspan="2" class="table-active">{{s.paid}}</td>
+                    <td colspan="2" class="table-active">{{s.sDate}}</td>
+                  </tr>
+                 
+                </tbody>
+              </table>
+    
+            
+            
+    
+        </div>
     </div>
+    <div class="col-3"></div>
+
+   </div>
 
 
 
+</section>
