@@ -16,6 +16,7 @@ export class AdminComponent implements OnInit {
   formname:FormGroup;
   post:userRegister;
   resgiteruser:userRegister[];
+  
   constructor(private adminservice:AdminService) { }
 
   ngOnInit(): void {

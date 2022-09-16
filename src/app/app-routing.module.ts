@@ -10,6 +10,8 @@ import { AdminComponent } from './component/profile/admin/admin.component';
 import { LoginComponent } from './component/profile/login/login.component';
 import { ProfileHomeComponent } from './component/profile/profile-home/profile-home.component';
 import { WalletHomeComponent } from './component/wallet/wallet-home/wallet-home.component';
+import { PostProductComponent } from './component/product/post-product/post-product.component';
+
 
 const routes: Routes = [
   {path:'', component: CategoryHomeComponent},
@@ -23,6 +25,7 @@ const routes: Routes = [
   {path:'product/:cid', component:ProductHomeComponent },
   {path:'product/review/:pid', component:ReviewComponent },
   {path:'cart/:pid', component:CartHomeComponent},
+  {path:'product',component:PostProductComponent}
 ];
 
 @NgModule({

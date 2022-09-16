@@ -10,7 +10,7 @@ import { OrderHomeComponent } from './component/order/order-home/order-home.comp
 import { ProductHomeComponent } from './component/product/product-home/product-home.component';
 import { WalletHomeComponent } from './component/wallet/wallet-home/wallet-home.component';
 import { LoginComponent } from './component/profile/login/login.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -21,6 +21,7 @@ import { FooterHomeComponent } from './component/footer/footer-home/footer-home.
 import { CategoryHomeComponent } from './component/product/category/category-home/category-home.component';
 import { CartItemComponent } from './component/cart/cart-item/cart-item.component';
 import { ReviewComponent } from './component/product/review/review.component';
+import { PostProductComponent } from './component/product/post-product/post-product.component';
 
 @NgModule({
   declarations: [
@@ -32,11 +33,12 @@ import { ReviewComponent } from './component/product/review/review.component';
     WalletHomeComponent,
     LoginComponent,
     AdminComponent,
-CategoryHomeComponent,
+    CategoryHomeComponent,
     FooterHomeComponent,
       CartItemComponent,
       NavbarHomeComponent,
-      ReviewComponent
+      ReviewComponent,
+      PostProductComponent
 
 
   ],
@@ -46,7 +48,9 @@ CategoryHomeComponent,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule,
+    BrowserModule
   ],
   providers: [],
   bootstrap: [AppComponent]
