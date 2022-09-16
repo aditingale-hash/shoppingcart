@@ -6,7 +6,7 @@ import { Wallet } from '../model/wallet.model';
 import { WindowRefService } from '../service/wallet-service-window';
 import { WalletServiceService } from '../service/wallet-service.service';
 
-import Swal from 'sweetalert2/dist/sweetalert2.js'; 
+//import Swal from 'sweetalert2/dist/sweetalert2.js'; 
 
 declare var paymentStart:any;
 
@@ -48,7 +48,7 @@ export class WalletHomeComponent implements OnInit {
     this.wService.activateWallet(this.appService.walletId.value).subscribe(data=>{
       console.log(data);
     },
-    error=>{ Swal.fire("Oops!", "Something went wrong!", "error");}
+   // error=>{ Swal.fire("Oops!", "Something went wrong!", "error");}
     );
   }
 
@@ -58,7 +58,7 @@ export class WalletHomeComponent implements OnInit {
       console.log(data);
       this.balance=data;
     },
-    error=>{ Swal.fire("Oops!", "Something went wrong!", "error");}
+   // error=>{ Swal.fire("Oops!", "Something went wrong!", "error");}
     );
     console.log("Check B");
   }
@@ -77,7 +77,7 @@ export class WalletHomeComponent implements OnInit {
       console.log(data);
       this.statementList=data;
     },
-    error=>{ Swal.fire("Oops!", "Something went wrong!", "error");}
+    //error=>{ Swal.fire("Oops!", "Something went wrong!", "error");}
     );
   }
 
@@ -87,7 +87,7 @@ export class WalletHomeComponent implements OnInit {
       console.log(data);
       this.walletList=data
     },
-    error=>{ Swal.fire("Oops!", "Something went wrong!", "error");}
+    //error=>{ Swal.fire("Oops!", "Something went wrong!", "error");}
     );
   }
 
@@ -96,7 +96,7 @@ export class WalletHomeComponent implements OnInit {
     this.wService.deactivateWallet(this.appService.walletId.value).subscribe(data=>{
       console.log(data);
     },
-    error=>{ Swal.fire("Oops!", "Something went wrong!", "error");}
+    //error=>{ Swal.fire("Oops!", "Something went wrong!", "error");}
     );
   }
 
@@ -106,7 +106,7 @@ export class WalletHomeComponent implements OnInit {
       console.log(data);
       this.amount=data;
     },
-    error=>{ Swal.fire("Oops!", "Something went wrong!", "error");}
+   // error=>{ Swal.fire("Oops!", "Something went wrong!", "error");}
     );
   }
 

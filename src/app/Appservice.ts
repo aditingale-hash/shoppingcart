@@ -15,8 +15,8 @@ export class AppService{
   cId = new BehaviorSubject<number>(0);
   orderId = new BehaviorSubject<number>(0);
   
-  pId = new BehaviorSubject<number>(0);
-  cId = new BehaviorSubject<number>(0);
+  //pId = new BehaviorSubject<number>(0);
+  cartId = new BehaviorSubject<number>(0);
   cart_product=new BehaviorSubject([]);
   
 

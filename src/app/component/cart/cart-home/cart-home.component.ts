@@ -18,18 +18,7 @@ products:Product[];
 
   ngOnInit(): void {
 
-    this.actRoute.params.subscribe(params=>{
-      this.cService.deleteItem(1,4)
-      .subscribe(data=>{
-        this.products=[];
-
-      },
-      error=>{
-        //this.errorMsg='not found'
-      }
-      );
-    }
-  )
+   
   }
    
   
@@ -76,7 +65,18 @@ products:Product[];
         );
       }
     
+      deleteItem(){
+    
+        this.cService.deleteItem(1,4)
+        .subscribe(data=>{
+          this.products=[];
 
+        },
+        error=>{
+         // this.errorMsg='not found'
+        }
+        );
+      }
       
         
   }

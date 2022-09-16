@@ -41,7 +41,8 @@
               <h6 class="card-subtitle mb-2 text-muted">Name:{{p.title}}</h6>
               <p class="card-text">Price: {{p.price}}</p>
               <h6 class="text-success">Free shipping</h6>
-              <a href="Javascript.void(0)" routerLink="/cart{{p.id}}"  class="card-link">Remove</a>
+              <button (click)="deleteItem()" type="button"
+              class="btn btn-outline-secondary">Remove</button>
               
               &nbsp;
               
