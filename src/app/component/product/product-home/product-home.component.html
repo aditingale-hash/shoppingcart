@@ -15,7 +15,7 @@
        
 
         <a href="Javascript.void(0)" routerLink="/product/review/{{p.id}}" class="card-link">Reviews & Ratings({{p.reviewCount}})</a>
-        <a href="Javascript.void(0)" routerLink="/cart"  class="card-link">Add to Cart</a>
+        <div class="d-flex flex-column mt-4"><button  class="btn btn-primary btn-sm" (click)="productByCartId()" type="button" ><a href="/cart">Add to Cart</a></button></div>
       </div>
     </div>
   </div>

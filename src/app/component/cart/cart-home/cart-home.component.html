@@ -29,16 +29,19 @@
 
 
 </div>
-
+<br><br>
 <div class="row">
+    
     <div class="col-sm-4" *ngFor="let p of products">
+       
         <div class="card">
+            
             <div class="card-body">
-              <h5 class="card-title">:ID {{p.id}}</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Name:{{p.productName}}</h6>
-              <p class="card-text">Type{{p.productType}}</p>
+              <h5 class="card-title">ID: {{p.id}}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Name:{{p.title}}</h6>
+              <p class="card-text">Price: {{p.price}}</p>
               <h6 class="text-success">Free shipping</h6>
-              <div class="d-flex flex-column mt-4"><button  class="btn btn-primary btn-sm" type="button" >Remove</button></div>
+              <a href="Javascript.void(0)" routerLink="/cart{{p.id}}"  class="card-link">Remove</a>
               
               &nbsp;
               

@@ -1,11 +1,10 @@
 export interface Product{
-    id?: number;
-    productType?: string;
-    productName?: string;
-    category?: string;
-    review?: string;
-    rating?: number;
-    price?:number;
-    specification?: string;
-    description?: string;
+  id?: number;
+  title?: string;
+  price?: number;
+  shortDescription?: string;
+  description?: string;
+  categoryId?: number;
+  categoryName?: string;
+  reviewCount?: number;
   }

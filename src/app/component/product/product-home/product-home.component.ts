@@ -14,6 +14,7 @@ export class ProductHomeComponent implements OnInit {
   products: Product[];
   errorMsg:string;
   cid: number;
+  productArr:Product;
 
   constructor(private actRoute: ActivatedRoute, private productService: ProductserviceService,
     private appService: AppService) { }
@@ -32,6 +33,29 @@ export class ProductHomeComponent implements OnInit {
       }
     );
   }
+
+
+ /* addToCart(){
+    //extract the array out of subject
+    let productArray=this.appService.cart_product.value;
+    //push the product into extracted array;
+    //productArray.push(product);
+    //update the subject with new value of extracted array
+    this.appService.cart_product.next(productArray);
+  }*/
+
+  productByCartId(){
+
+    this.productService.postProductByCartID(this.appService.cId.value,this.appService.pId.value).subscribe(data=>{
+this.productArr=data;
+console.log("1");
+console.log(data);
+//let productArray=this.appService.cart_product.value;
+//this.appService.cart_product.next(productArray);
+    })
+    
+  }
+
 
 
 

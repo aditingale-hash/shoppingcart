@@ -14,12 +14,14 @@ export class ProductserviceService {
   private getReviewByProductIDApi: string;
   private postReviewApi: string;
   private deleteReviewApi: string;
+  private postProductByCartIDApi:string;
 
   constructor(private http: HttpClient){
     this.getProductByCatIDApi ='http://localhost:1002/product/';
     this.getReviewByProductIDApi='http://localhost:1002/review/product/';
     this.postReviewApi='http://localhost:1002/review/';
     this.deleteReviewApi='http://localhost:1002/review/';
+    this.postProductByCartIDApi="http://localhost:1003/cart/saveItem/";
   }
 
   public getProductByCatId(catId:number) : Observable<Product[]>{
@@ -40,5 +42,9 @@ export class ProductserviceService {
   public deleteReview(rid: number):Observable<any> {
 
     return this.http.delete<any>(this.deleteReviewApi+rid);
+  }
+
+  public postProductByCartID(cId:number,pId:number):Observable<Product> {
+    return this.http.post<Product>(this.postProductByCartIDApi+1+"/"+4,{});
   }
 }
