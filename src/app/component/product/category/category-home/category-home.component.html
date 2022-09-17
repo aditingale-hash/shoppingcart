@@ -1,29 +1,42 @@
 <header class="banner">
     <h1></h1>
   </header>
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-  <!------ Include the above in your HEAD tag ---------->
+
   
   <div class="alert alert-primary" role="alert" *ngIf="errorMsg">
     {{errorMsg}}
   </div>
 
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-  <section>   <div class="container">
-    <div class="row">
-      <div class="col-sm-4" *ngFor="let c of categories">
-       <!-- <div *ngIf="c.id==1"class="container mx-auto mt-3"> -->
-       <div class="card card-01 height-fix">
-           <img  class="card-img-top" src="../../../../../assets/images/all.jfif" alt="WOMEN">
-             <div class="card-img-overlay">
-               <h4 class="card-title"><strong>{{c.name}}</strong></h4>
-           <p class="card-text">ALL NEW BRANDS</p>
-           <a href="Javascript.void(0)" routerLink="/product/{{c.id}}" class="card-link">View All Products</a>
-          </div>
-         </div>
-       </div>
+  <div class="card-group">
+     <div class="col-sm-4" *ngFor="let c of categories">
+      <div *ngIf="c.id==1"class="container mx-auto mt-3">
+     <div class="card" style="width: 18rem;">
+      <img src="../../../../../assets/images/wo.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h4 class="card-title"><strong>{{c.name}}</strong></h4>
+        <p class="card-text">ALL NEW BRANDS</p>
+        <a href="Javascript.void(0)" routerLink="/product/{{c.id}}" class="card-link">View All Products</a>
       </div>
-     </div>
-    
+    </div>    </div>
+     
+       <div *ngIf="c.id==2"class="container mx-auto mt-1">
+      <div class="card" style="width: 18rem;">
+       <img src="../../../../../assets/images/men.jpg" class="card-img-top" alt="...">
+       <div class="card-body">
+         <h4 class="card-title"><strong>{{c.name}}</strong></h4>
+         <p class="card-text">ALL NEW BRANDS</p>
+         <a href="Javascript.void(0)" routerLink="/product/{{c.id}}" class="card-link">View All Products</a>
+       </div>
+     </div>    </div>
+ 
+     <div *ngIf="c.id==3"class="container mx-auto mt-1">
+      <div class="card" style="width: 18rem;">
+       <img src="../../../../../assets/images/f.jpg" class="card-img-top" alt="...">
+       <div class="card-body">
+         <h4 class="card-title"><strong>{{c.name}}</strong></h4>
+         <p class="card-text">ALL NEW BRANDS</p>
+         <a href="Javascript.void(0)" routerLink="/product/{{c.id}}" class="card-link">View All Products</a>
+       </div>
+     </div>    </div>
+ 
+   

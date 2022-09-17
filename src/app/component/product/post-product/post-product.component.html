@@ -3,6 +3,10 @@
     <form #postProduct="ngForm" (ngSubmit)="onSubmit(postProduct.value)">
     <label for="exampleFormControlTextarea1" class="form-label">Add Product</label>
     <label>
+      &nbsp;&nbsp;&nbsp;&nbsp; Category ID :&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="text" name="catId" ngModel placeholder="catId" required>
+    </label>
+    <label>
       &nbsp;&nbsp;&nbsp;&nbsp; Product Title :&nbsp;&nbsp;&nbsp;&nbsp;
       <input type="text" name="title" ngModel placeholder="title" required>
     </label>

@@ -62,7 +62,8 @@ export class ReviewComponent implements OnInit {
         username : this.username
       }
 
-      this.productService.postReview(this.review,this.pid).subscribe(data=>{
+      this.productService.postReview(this.review,this.pid)
+      .subscribe(data=>{
           this.reviewArry.push(data);
           this.reviews = this.reviewArry;
           this.showReviewForm =  !this.showReviewForm;

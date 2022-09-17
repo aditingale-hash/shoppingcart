@@ -24,12 +24,12 @@ export class ProductserviceService {
     this.postReviewApi='http://localhost:1002/review/';
     this.deleteReviewApi='http://localhost:1002/review/';
     this.postProductByCartIDApi="http://localhost:1003/cart/saveItem/";
-    this.postProductApi='http://localhost:1002/product'
+    this.postProductApi='http://localhost:1002/product/'
 
   }
-  public postProduct(product: Product):Observable<Product>{
+  public postProduct(product: Product, catId:number):Observable<Product>{
 
-    return this.http.post<Product>(this.postProductApi, product);
+    return this.http.post<Product>(this.postProductApi+catId, product);
   }
 
 
