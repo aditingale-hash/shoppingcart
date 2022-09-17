@@ -1,4 +1,3 @@
-<p>address works!</p>
 
 <div class="row mt-3 mx-3" style="margin-top:25px ;">
     <div class="col-md-3">
@@ -21,55 +20,55 @@
           <div class="text-center mb-3 pb-2 mt-3">
             <h4 style="color: #495057 ;">Delivery Details</h4>
           </div>
-  
-          <form class="mb-0">
+         
+          <form class="mb-0" [formGroup]="addressForm"   (submit)="onFormSubmit()" >
   
             <div class="row mb-4">
               <div class="col">
                 <div class="form-outline">
-                  <input type="text" id="form9Example1" class="form-control input-custom" />
-                  <label class="form-label" for="form9Example1">First name</label>
+                  <input type="text" id="fullName" name="fullName" class="form-control input-custom" required formControlName="fullName" />
+                  <label class="form-label" for="fullName">Full Name</label>
                 </div>
               </div>
               <div class="col">
                 <div class="form-outline">
-                  <input type="text" id="form9Example2" class="form-control input-custom" />
-                  <label class="form-label" for="form9Example2">Last name</label>
+                  <input type="text" id="mobNo" name="mobNo" class="form-control input-custom" required formControlName="mobNo" />
+                  <label class="form-label" for="mobNo">Mobile Number</label>
                 </div>
               </div>
             </div>
             <div class="row mb-4">
               <div class="col">
                 <div class="form-outline">
-                  <input type="text" id="form9Example3" class="form-control input-custom" />
-                  <label class="form-label" for="form9Example3">City</label>
+                  <input type="text" id="city" name="city" class="form-control input-custom" required formControlName="city"/>
+                  <label class="form-label" for="city">City</label>
                 </div>
               </div>
               <div class="col">
                 <div class="form-outline">
-                  <input type="text" id="form9Example4" class="form-control input-custom" />
-                  <label class="form-label" for="form9Example4">Zip</label>
+                  <input type="number" id="pincode" name="pincode" class="form-control input-custom" required formControlName="pincode"/>
+                  <label class="form-label" for="pincode">Pincode</label>
                 </div>
               </div>
             </div>
             <div class="row mb-4">
               <div class="col">
                 <div class="form-outline">
-                  <input type="text" id="form9Example6" class="form-control input-custom" />
-                  <label class="form-label" for="form9Example6">Address</label>
+                  <input type="text" id="flatNo" name="flatNo" class="form-control input-custom" required formControlName="flatNo" />
+                  <label class="form-label" for="flatNo">Flat no.</label>
                 </div>
               </div>
               <div class="col">
                 <div class="form-outline">
-                  <input type="email" id="typeEmail" class="form-control input-custom" />
-                  <label class="form-label" for="typeEmail">Email</label>
+                  <input type="state" id="state" name = "state" class="form-control input-custom" required formControlName="state" />
+                  <label class="form-label" for="state">State</label>
                 </div>
               </div>
             </div>
   
             <div class="float-end ">
               <!-- Submit button -->
-              <button type="submit" class="btn btn-primary btn-rounded"
+              <button type="submit" name="submit" class="btn btn-primary btn-rounded" routerLink="/addorder"
                 style="background-color: #0062CC ;">Place order</button>
             </div>
   

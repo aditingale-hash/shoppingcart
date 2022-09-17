@@ -11,6 +11,8 @@ import { LoginComponent } from './component/profile/login/login.component';
 import { ProfileHomeComponent } from './component/profile/profile-home/profile-home.component';
 import { WalletHomeComponent } from './component/wallet/wallet-home/wallet-home.component';
 import { PostProductComponent } from './component/product/post-product/post-product.component';
+import { AddressHomeComponent } from './component/address/address-home/address-home.component';
+import { AddOrderComponent } from './component/order/add-order/add-order.component';
 
 
 const routes: Routes = [
@@ -19,13 +21,17 @@ const routes: Routes = [
   {path:'order', component: OrderHomeComponent},
   {path:'profile', component: ProfileHomeComponent},
   {path:'wallet', component: WalletHomeComponent},
+  {path:'storeaddress',component:AddressHomeComponent},
   {path:'login', component: LoginComponent},
   {path:'cart-item', component: CartItemComponent},
   {path:'admin', component: AdminComponent},
   {path:'product/:cid', component:ProductHomeComponent },
   {path:'product/review/:pid', component:ReviewComponent },
   {path:'cart/:pid', component:CartHomeComponent},
-  {path:'product',component:PostProductComponent}
+  {path:'product',component:PostProductComponent},
+  //{path:'storeaddress/:cid',component:AddressComponent}
+  {path:'addorder',component:AddOrderComponent}
+  
 ];
 
 @NgModule({

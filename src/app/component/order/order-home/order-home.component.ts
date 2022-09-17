@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AppService } from 'src/app/Appservice';
+import { Orders } from '../model/order.model';
+import { OrderService } from '../service/order.service';
 
 @Component({
   selector: 'app-order-home',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrderHomeComponent implements OnInit {
 
-  constructor() { }
+ uid :any = this.appService.userId;
+ orderArry : Orders[];
+
+  constructor(private orderService: OrderService , private appService:AppService) { }
 
   ngOnInit(): void {
+    
+    this.orderService.getOrderByUserId(this.uid).subscribe(data=>{
+        this.orderArry = data;
+    });
   }
 
 }

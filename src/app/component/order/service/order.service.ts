@@ -10,9 +10,13 @@ import { Orders } from "../model/order.model";
 export class OrderService{
 
     getAllOrderApi: string;
+    postOrderApi: string;
+    getOrderApi:string;
 
     constructor(private http:HttpClient){
-        this.getAllOrderApi = "http://localhost:1004/order"
+        this.getAllOrderApi = "http://localhost:1004/order";
+        this.getOrderApi = "http://localhost:1004/order/"
+        this.postOrderApi = "http://localhost:1004/addorder/";
     }
 
     // public getOrderById(oid:number):Observable<Orders[]>{
@@ -22,5 +26,14 @@ export class OrderService{
     public getAllOrders():Observable<Orders[]>{
         return this.http.get<Orders[]>(this.getAllOrderApi);
     }
+
+    public postOrder(order:Orders,aid:number):Observable<Orders>{
+        return this.http.post<Orders>(this.postOrderApi+aid,order);
+    }
+
+    public getOrderByUserId(uid:number):Observable<Orders[]>{
+        return this.http.get<Orders[]>(this.getOrderApi+ uid);
+    }
+
 
 }

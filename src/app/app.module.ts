@@ -10,7 +10,8 @@ import { OrderHomeComponent } from './component/order/order-home/order-home.comp
 import { ProductHomeComponent } from './component/product/product-home/product-home.component';
 import { WalletHomeComponent } from './component/wallet/wallet-home/wallet-home.component';
 import { LoginComponent } from './component/profile/login/login.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule} from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -22,6 +23,8 @@ import { CategoryHomeComponent } from './component/product/category/category-hom
 import { CartItemComponent } from './component/cart/cart-item/cart-item.component';
 import { ReviewComponent } from './component/product/review/review.component';
 import { PostProductComponent } from './component/product/post-product/post-product.component';
+import { AddressHomeComponent } from './component/address/address-home/address-home.component';
+import { AddOrderComponent } from './component/order/add-order/add-order.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,9 @@ import { PostProductComponent } from './component/product/post-product/post-prod
       CartItemComponent,
       NavbarHomeComponent,
       ReviewComponent,
-      PostProductComponent
+      PostProductComponent,
+      AddressHomeComponent,
+      AddOrderComponent
 
 
   ],
